@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="only light">
+<!--
+  Sign-up page for the Planta newsletter: https://slike.planta.hr/prijava
+  Linked from Instagram/Facebook (bio, story link sticker) and the printed QR code in the garden centre.
+  Submits to the MailerLite embedded form "Planta - prijava (slike.planta.hr/prijava)"
+  (account 2729876, form 202650345878324723, group Planta Newsletter, double opt-in).
+-->
+<title>Prijava na Planta newsletter</title>
+<meta name="description" content="Savjeti za vrt jednom tjedno i 10 % popusta u Planta vrtnom centru.">
+<link rel="canonical" href="https://slike.planta.hr/prijava">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Planta">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:url" content="https://slike.planta.hr/prijava">
+<meta property="og:title" content="Prijava na Planta newsletter">
+<meta property="og:description" content="Savjeti za vrt jednom tjedno i 10 % popusta u Planta vrtnom centru.">
+<meta property="og:image" content="https://slike.planta.hr/newsletter/dobrodosli/plant-row.png">
+<link rel="icon" href="/newsletter/planta-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{color-scheme:only light;--ink:#1C2620;--green:#1E7A30;--muted:#4A564E;--muted2:#5A675E;--panel:#F2F6EF;--rule:#CFCFCA;--rule2:#E4E6E0;--err:#A33A2A}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff}
+body{color:var(--ink);font-family:'Jost',Helvetica,Arial,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.in{max-width:600px;margin:0 auto;padding:36px 40px 48px}
+.hdr{display:flex;justify-content:center;align-items:baseline;gap:28px}
+.hdr img{width:81px;height:22px;display:block;transform:translateY(1px)}
+.hdr span{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:17px;line-height:22px}
+.row{margin-top:28px;border-bottom:1px solid var(--rule)}
+.row img{display:block;width:100%;height:auto}
+.kick{margin:36px 0 0;text-align:center;font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--muted2)}
+h1{margin:12px 0 0;text-align:center;font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:52px;line-height:1.05;letter-spacing:-.025em}
+.lead{margin:16px auto 0;max-width:420px;text-align:center;font-size:17px;line-height:26px;color:var(--muted)}
+.offer{margin-top:36px;background:var(--panel);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:24px}
+.big{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:64px;line-height:1;letter-spacing:-.03em;color:var(--green);white-space:nowrap}
+.offer h2{margin:0;font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:22px;line-height:27px;letter-spacing:-.01em}
+.offer p{margin:6px 0 0;font-size:14px;line-height:21px;color:var(--muted)}
+form{margin-top:36px}
+label{display:block;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted2)}
+.f{display:flex;gap:10px;margin-top:10px}
+input[type=email]{flex:1;min-width:0;height:54px;padding:0 22px;border:1px solid var(--rule);border-radius:999px;font:inherit;font-size:16px;font-weight:400;color:var(--ink);background:#fff;outline:none}
+input[type=email]:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(30,122,48,.12)}
+button{height:54px;padding:0 30px;border:0;border-radius:999px;background:var(--green);color:#fff;font:inherit;font-size:16px;font-weight:500;cursor:pointer;white-space:nowrap}
+button:disabled{opacity:.6;cursor:default}
+.hp{position:absolute;left:-9999px}
+.note{margin:14px 0 0;font-size:13px;line-height:20px;color:var(--muted2)}
+.msg{display:none;margin-top:14px;font-size:15px;line-height:23px;color:var(--err)}
+.done{display:none;margin-top:36px;padding:28px 32px;border-radius:16px;background:var(--panel);text-align:center}
+.done h2{margin:0;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:22px;line-height:28px;color:var(--green)}
+.done p{margin:10px auto 0;max-width:400px;font-size:15px;line-height:23px;color:var(--muted)}
+.ok form{display:none}.ok .done{display:block}
+.rule{margin-top:72px;border-top:1px solid var(--rule)}
+.foot{display:flex;gap:24px;margin-top:28px}
+.foot div{flex:1}
+.foot b{display:block;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted2);line-height:16px}
+.foot p{margin:8px 0 0;font-size:14px;line-height:22px;color:var(--ink)}
+.foot a{color:var(--ink);text-decoration:none}
+.foot .g{color:var(--green)}
+.foot .m{color:var(--muted2)}
+.end{margin-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted2)}
+.end img{width:59px;height:16px;display:block}
+.end a{color:var(--muted2);text-decoration:none}
+@media (max-width:600px){
+  .in{padding:32px 24px 40px}
+  h1{font-size:42px}
+  .offer{flex-direction:column;align-items:flex-start;gap:12px;padding:24px}
+  .f{flex-direction:column}
+  input[type=email]{flex:none;width:100%}
+  button{width:100%}
+  .foot{flex-direction:column;gap:24px}
+  .end{flex-direction:column;align-items:flex-start;gap:12px}
+}
+</style>
+</head>
+<body>
+<div class="in" id="wrap">
+  <div class="hdr"><img src="/newsletter/planta-logo.png" alt="Planta"><span>Newsletter</span></div>
+  <div class="row"><img src="/newsletter/dobrodosli/plant-row.png" alt="" width="1200" height="563"></div>
+
+  <p class="kick">Planta newsletter</p>
+  <h1>Savjeti za vaš vrt</h1>
+  <p class="lead">Jednom tjedno: što saditi, kako njegovati i kada brati, uz novosti iz Plante.</p>
+
+  <div class="offer">
+    <div class="big">10&nbsp;%</div>
+    <div>
+      <h2>Popust u vrtnom centru</h2>
+      <p>Nakon prijave mailom dobivate osobni kod za 10&nbsp;% popusta u našem vrtnom centru. Kod vrijedi 6&nbsp;mjeseci.</p>
+    </div>
+  </div>
+
+  <form id="f" novalidate>
+    <label for="email">Vaša e-mail adresa</label>
+    <div class="f">
+      <input id="email" type="email" name="fields[email]" autocomplete="email" inputmode="email" placeholder="ime@primjer.hr" required>
+      <button type="submit" id="b">Prijavi se</button>
+    </div>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="msg" id="msg" role="alert"></p>
+    <p class="note">Poslat ćemo vam mail za potvrdu prijave. Odjaviti se možete bilo kada, poveznicom na dnu svakog newslettera.</p>
+  </form>
+
+  <div class="done" role="status">
+    <h2>Još samo jedan korak</h2>
+    <p>Poslali smo vam mail. Kliknite poveznicu u njemu da potvrdite prijavu. Ako ga ne vidite, provjerite i mapu neželjene pošte.</p>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot">
+    <div><b>Vrtni centar</b><p>Grančarska ulica 60<br>Kupinečki Kraljevec<br>10257 Brezovica</p></div>
+    <div><b>Radno vrijeme</b><p>Pon–pet 7–16 h<br>Subota 7–13 h<br><span class="m">Nedjelja zatvoreno</span></p></div>
+    <div><b>Kontakt</b><p><a href="tel:+38516329191">01 6329 191</a> <span class="m">vrtni centar</span><br><a href="tel:+385992104564">099 2104 564</a> <span class="m">webshop</span><br><a class="g" href="mailto:sadnice@planta.hr">sadnice@planta.hr</a></p></div>
+  </div>
+  <div class="end">
+    <img src="/newsletter/planta-logo.png" alt="Planta">
+    <span><a href="https://www.planta.hr">www.planta.hr</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://www.instagram.com/fragariaplanta/">Instagram</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://www.facebook.com/people/Fragaria-Planta/61578823345720/">Facebook</a></span>
+  </div>
+</div>
+<script>
+(function(){
+  var URL = 'https://assets.mailerlite.com/jsonp/2729876/forms/202650345878324723/subscribe';
+  var f = document.getElementById('f'), e = document.getElementById('email'), b = document.getElementById('b'), m = document.getElementById('msg');
+  function err(t){ m.textContent = t; m.style.display = 'block'; b.disabled = false; b.textContent = 'Prijavi se'; }
+  function ok(){ document.getElementById('wrap').classList.add('ok'); }
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault(); m.style.display = 'none';
+    if (f.website.value) { ok(); return; }
+    var v = e.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err('Upišite ispravnu e-mail adresu.'); e.focus(); return; }
+    b.disabled = true; b.textContent = 'Šaljem…';
+    var d = new FormData(); d.append('fields[email]', v); d.append('ml-submit', '1'); d.append('anticsrf', 'true');
+    fetch(URL, { method: 'POST', body: d }).then(function(r){ return r.json(); }).then(function(j){
+      if (j && j.success) ok(); else err('Prijava nije uspjela. Provjerite adresu i pokušajte ponovno.');
+    }).catch(function(){
+      // If the response can't be read (e.g. a CORS change on MailerLite's side), send it blind once.
+      fetch(URL, { method: 'POST', body: d, mode: 'no-cors' }).then(ok).catch(function(){ err('Nešto nije u redu s vezom. Pokušajte ponovno za koji trenutak.'); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
